@@ -1,10 +1,10 @@
-import { Wrapper } from '@/components';
+import { Dashboard, Wrapper } from '@/components';
 
 function App() {
   return (
     <div className="app">
       <Wrapper>
-        <h1>Code something cool :)</h1>
+        <Dashboard />
       </Wrapper>
     </div>
   );

@@ -1,0 +1,13 @@
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+@media (min-width: 48em) {
+  .grid {
+    gap: 4rem;
+    grid-template-columns: 32rem 1fr;
+  }
+}
+.grid aside {
+  background-color: var(--dark-blue);
+}
