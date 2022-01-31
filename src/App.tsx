@@ -1,9 +1,11 @@
-import { Button } from '@/button';
+import { Wrapper } from '@/components';
 
 function App() {
   return (
     <div className="app">
-      <h1>Code something cool :)</h1>
+      <Wrapper>
+        <h1>Code something cool :)</h1>
+      </Wrapper>
     </div>
   );
 }
