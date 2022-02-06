@@ -8,6 +8,3 @@
     grid-template-columns: 32rem 1fr;
   }
 }
-.grid aside {
-  background-color: var(--dark-blue);
-}

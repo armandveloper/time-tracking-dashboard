@@ -1,0 +1,17 @@
+.sidebar {
+  background-color: var(--dark-blue);
+}
+
+.nav {
+  margin: 2rem 0;
+}
+.link {
+  color: var(--pale-blue);
+  display: block;
+  padding: 0.8rem 3rem;
+  text-decoration: none;
+  transition: color 0.25s ease-in;
+}
+.link:is(.active, :hover) {
+  color: #fff;
+}
