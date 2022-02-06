@@ -5,7 +5,7 @@
 .header {
   background-color: var(--blue);
   border-radius: 2rem;
-  padding: 4rem;
+  padding: var(--spacing);
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -16,12 +16,12 @@
   height: 8rem;
   width: 8rem;
 }
-p {
+.label {
   color: var(--pale-blue);
   line-height: 1.6;
   margin: 0;
 }
-span {
+.name {
   font-size: 1.8rem;
 }
 @media (min-width: 48em) {
@@ -30,17 +30,17 @@ span {
     align-items: flex-start;
     gap: 4rem;
   }
-  span {
+  .name {
     font-size: 3.4rem;
   }
 }
 .nav {
-  margin: 2rem 0;
+  margin: 2rem var(--spacing);
   display: flex;
 }
 .link {
   color: var(--pale-blue);
-  padding: 0.8rem 3rem;
+  padding: 0.8rem 0;
   text-decoration: none;
   flex: calc(100% / 3);
   transition: color 0.25s ease-in;

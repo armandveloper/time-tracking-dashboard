@@ -8,3 +8,12 @@
     grid-template-columns: 24rem 1fr;
   }
 }
+main {
+  display: grid;
+  gap: 4rem;
+}
+@media (min-width: 48em) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -9,8 +9,8 @@ export const Sidebar = () => {
       <header className={styles.header}>
         <img className={styles.avatar} src={avatar} alt={name} />
         <div>
-          <p>Report for</p>
-          <span>{name}</span>
+          <p className={styles.label}>Report for</p>
+          <span className={styles.name}>{name}</span>
         </div>
       </header>
       <nav className={styles.nav}>

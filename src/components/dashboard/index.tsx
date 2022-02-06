@@ -1,4 +1,4 @@
-import { Sidebar } from '@/components';
+import { Card, Sidebar } from '@/components';
 import styles from './index.module.css';
 
 export const Dashboard = () => {
@@ -6,7 +6,12 @@ export const Dashboard = () => {
     <div className={styles.grid}>
       <Sidebar />
       <main>
-        <h1>Categories</h1>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </main>
     </div>
   );
