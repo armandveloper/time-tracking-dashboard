@@ -1,16 +1,48 @@
+import { exercise, play, selfCare, social, study, work } from '@/svg';
 import styles from './index.module.css';
-import iconWork from '@/assets/icon-work.svg';
 
-export const Card = () => {
+type Props = {
+  current: number;
+  previous: number;
+  timeframe: string;
+  title: string;
+};
+
+const backgrounds = {
+  Work: 'hsl(15, 100%, 70%)',
+  Play: 'hsl(195, 74%, 62%)',
+  Study: 'hsl(348, 100%, 68%)',
+  Exercise: 'hsl(145, 58%, 55%)',
+  Social: 'hsl(264, 64%, 52%)',
+  'Self Care': 'hsl(43, 84%, 65%)',
+};
+
+const icons = {
+  Work: work,
+  Play: play,
+  Study: study,
+  Exercise: exercise,
+  Social: social,
+  'Self Care': selfCare,
+};
+
+export const Card = ({ current, previous, timeframe, title }: Props) => {
   return (
-    <article className={styles.card}>
+    <article
+      className={styles.card}
+      style={{
+        backgroundColor: backgrounds[title as keyof typeof backgrounds],
+      }}
+    >
       <header className={styles.background}>
-        <img className={styles.icon} src={iconWork} alt="" />
+        <div className={styles.icon}>
+          {icons[title as keyof typeof backgrounds]}
+        </div>
       </header>
 
       <div className={styles.body}>
         <div className={styles.top}>
-          <h2 className={styles.category}>Work</h2>
+          <h2 className={styles.category}>{title}</h2>
           <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
@@ -20,8 +52,8 @@ export const Card = () => {
           </svg>
         </div>
         <div className={styles.grid}>
-          <span className={styles.time}>32hrs</span>
-          <span className={styles.lastWeek}>Last Week - 36hrs</span>
+          <span className={styles.time}>{current}hrs</span>
+          <span className={styles.lastWeek}>Last Week - {previous}hrs</span>
         </div>
       </div>
     </article>
