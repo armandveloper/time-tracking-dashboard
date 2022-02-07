@@ -12,18 +12,21 @@
   top: -1rem;
   right: 1rem;
 }
-@media (min-width: 48em) {
-  .background {
-    height: 6rem;
-  }
-  .icon {
-    top: -0.5rem;
-  }
-}
 .body {
   background-color: var(--dark-blue);
   border-radius: 2rem 2rem 0 0;
   padding: var(--spacing);
+  transition: 0.3s background-color ease-in;
+}
+.card:hover .body {
+  background-color: var(--card-hover);
+}
+.viewMore {
+  color: #bbc0ff;
+  transition: color 0.25s ease-in;
+}
+.viewMore:hover {
+  color: #fff;
 }
 .category {
   font-size: 1.8rem;
