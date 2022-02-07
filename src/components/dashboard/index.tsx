@@ -10,15 +10,18 @@ export const Dashboard = () => {
     <div className={styles.grid}>
       <Sidebar timeframe={timeframe} setTimeframe={setTimeframe} />
       <main>
-        {data.map(({ title, timeframes: { [timeframe]: _timeframe } }) => (
-          <Card
-            key={title}
-            current={_timeframe.current}
-            previous={_timeframe.previous}
-            timeframe={timeframe}
-            title={title}
-          />
-        ))}
+        {data.map(
+          ({ icon, title, timeframes: { [timeframe]: _timeframe } }) => (
+            <Card
+              key={title}
+              current={_timeframe.current}
+              icon={icon}
+              previous={_timeframe.previous}
+              timeframe={timeframe}
+              title={title}
+            />
+          )
+        )}
       </main>
     </div>
   );

@@ -3,9 +3,9 @@
   overflow: hidden;
 }
 .background {
-  height: 4rem;
-  position: relative;
-  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: right 10% top;
+  height: 4.8rem;
 }
 .icon {
   position: absolute;
@@ -46,7 +46,7 @@
 .time {
   font-size: 3rem;
 }
-.lastWeek {
+.previousLabel {
   color: var(--pale-blue);
 }
 @media (min-width: 48em) {

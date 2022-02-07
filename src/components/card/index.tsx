@@ -1,8 +1,8 @@
-import { exercise, play, selfCare, social, study, work } from '@/svg';
 import styles from './index.module.css';
 
 type Props = {
   current: number;
+  icon: string;
   previous: number;
   timeframe: string;
   title: string;
@@ -17,22 +17,13 @@ const backgrounds = {
   'Self Care': 'hsl(43, 84%, 65%)',
 };
 
-const icons = {
-  Work: work,
-  Play: play,
-  Study: study,
-  Exercise: exercise,
-  Social: social,
-  'Self Care': selfCare,
-};
-
 const previousLabel = {
   Daily: 'Yesterday',
   Weekly: 'Last week',
   Monthly: 'Last Month',
 };
 
-export const Card = ({ current, previous, timeframe, title }: Props) => {
+export const Card = ({ current, icon, previous, timeframe, title }: Props) => {
   return (
     <article
       className={styles.card}
@@ -40,11 +31,12 @@ export const Card = ({ current, previous, timeframe, title }: Props) => {
         backgroundColor: backgrounds[title as keyof typeof backgrounds],
       }}
     >
-      <header className={styles.background}>
-        <div className={styles.icon}>
-          {icons[title as keyof typeof backgrounds]}
-        </div>
-      </header>
+      <header
+        className={styles.background}
+        style={{
+          backgroundImage: `url(${icon})`,
+        }}
+      />
       <div className={styles.body}>
         <div className={styles.top}>
           <h2 className={styles.category}>{title}</h2>
@@ -60,7 +52,7 @@ export const Card = ({ current, previous, timeframe, title }: Props) => {
         </div>
         <div className={styles.grid}>
           <span className={styles.time}>{current}hrs</span>
-          <span className={styles.lastWeek}>
+          <span className={styles.previousLabel}>
             {previousLabel[timeframe as keyof typeof previousLabel]} -{' '}
             {previous}hrs
           </span>
